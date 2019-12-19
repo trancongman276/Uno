@@ -44,6 +44,12 @@ public class MouseManager implements MouseListener,MouseMotionListener{
 		// TODO Auto-generated method stub
 		x=e.getX();
 		y=e.getY();
+		if(e.getClickCount() !=1) {
+			singleClick = false;
+		}
+		if(e.getClickCount() !=2) {
+			doubleClick = false;
+		}
 	}
 
 	@Override
@@ -52,9 +58,10 @@ public class MouseManager implements MouseListener,MouseMotionListener{
 		if(e.getClickCount() ==1) {
 			singleClick = true;
 		}else {
+			singleClick = false;
 			if(e.getClickCount() ==2) {
 				doubleClick = true;
-			}
+			} else doubleClick = false;
 			
 		}
 	}
@@ -68,7 +75,6 @@ public class MouseManager implements MouseListener,MouseMotionListener{
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

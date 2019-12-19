@@ -43,6 +43,7 @@ public class DrawGame implements Runnable{
 		State.setState(new Game());
 		
 //		System.out.println(Toolkit.getDefaultToolkit().getScreenResolution());
+
 		
 		
 	}
@@ -63,7 +64,7 @@ public class DrawGame implements Runnable{
 		g = bs.getDrawGraphics();
 		g.clearRect(0, 0, display.getFrame().getWidth(),  display.getFrame().getHeight());
 		
-		
+		g.drawImage(Asset.cardList.get(3), mousemanager.getX(), mousemanager.getY(), null);
 		if(State.getState()!=null) {
 			State.getState().Render(g);
 		}

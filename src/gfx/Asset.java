@@ -10,8 +10,15 @@ public class Asset {
 	public static int w,h;
 
 	public static void init() {
+		cardList = new ArrayList<>();
 		
-		w = cardList.get(0).getWidth();
-		h = cardList.get(0).getHeight();
+		for(int i=0;i<=39;i++) {
+			cardList.add(Resize.resize(ImageLoader.LoadImage("/Card/"+i+".png")));
+		}
+		
+		backCard = Resize.resize(ImageLoader.LoadImage("/backCard.png"));
+		
+		w = (int) (cardList.get(0).getWidth()*Resize.x);
+		h = (int) (cardList.get(0).getHeight()*Resize.y);
 	}
 }
